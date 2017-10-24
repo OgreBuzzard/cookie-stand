@@ -5,7 +5,7 @@ var firstAndPike = {
   maxCust: 65,
   avgCookCust: 6.3,
   totalSalesByHour: [],
-  totalSalesDay: [],
+  totalSalesDay: 0,
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
   randomCookie: function() {
     return Math.floor(((Math.random() * (this.maxCust - this.minCust)) + this.minCust) * this.avgCookCust);
@@ -21,7 +21,7 @@ var firstAndPike = {
     };
     console.log('Total First and Pike: ' + cookiesDay);
     if (i = firstAndPike.hours.length) {
-      this.totalSalesDay.push(cookiesDay);
+      this.totalSalesDay = cookiesDay;
     }
     return cookiesDay;
   },
@@ -35,7 +35,7 @@ var seaTac = {
   maxCust: 24,
   avgCookCust: 1.2,
   totalSalesByHour: [],
-  totalSalesDay: [],
+  totalSalesDay: 0,
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
   randomCookie: function() {
     return Math.floor(((Math.random() * (this.maxCust - this.minCust)) + this.minCust) * this.avgCookCust);
@@ -51,7 +51,7 @@ var seaTac = {
     };
     console.log('Total SeaTac: ' + cookiesDay);
     if (i = seaTac.hours.length) {
-      this.totalSalesDay.push(cookiesDay);
+      this.totalSalesDay = cookiesDay;
     }
     return cookiesDay;
   },
@@ -65,7 +65,7 @@ var seattleCenter = {
   maxCust: 38,
   avgCookCust: 3.7,
   totalSalesByHour: [],
-  totalSalesDay: [],
+  totalSalesDay: 0,
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
   randomCookie: function() {
     return Math.floor(((Math.random() * (this.maxCust - this.minCust)) + this.minCust) * this.avgCookCust);
@@ -81,7 +81,7 @@ var seattleCenter = {
     };
     console.log('Total Seattle Center: ' + cookiesDay);
     if (i = seattleCenter.hours.length) {
-      this.totalSalesDay.push(cookiesDay);
+      this.totalSalesDay = cookiesDay;
     }
     return cookiesDay;
   },
@@ -95,7 +95,7 @@ var capitolHill = {
   maxCust: 38,
   avgCookCust: 2.3,
   totalSalesByHour: [],
-  totalSalesDay: [],
+  totalSalesDay: 0,
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
   randomCookie: function() {
     return Math.floor(((Math.random() * (this.maxCust - this.minCust)) + this.minCust) * this.avgCookCust);
@@ -111,7 +111,7 @@ var capitolHill = {
     };
     console.log('Total Capitol Hill: ' + cookiesDay);
     if (i = capitolHill.hours.length) {
-      this.totalSalesDay.push(cookiesDay);
+      this.totalSalesDay = cookiesDay;
     }
     return cookiesDay;
   },
@@ -125,7 +125,7 @@ var alki = {
   maxCust: 16,
   avgCookCust: 4.6,
   totalSalesByHour: [],
-  totalSalesDay: [],
+  totalSalesDay: 0,
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
   randomCookie: function() {
     return Math.floor(((Math.random() * (this.maxCust - this.minCust)) + this.minCust) * this.avgCookCust);
@@ -141,7 +141,7 @@ var alki = {
     };
     console.log('Total Alki: ' + cookiesDay);
     if (i = alki.hours.length) {
-      this.totalSalesDay.push(cookiesDay);
+      this.totalSalesDay = cookiesDay;
     }
     return cookiesDay;
   },
@@ -190,5 +190,4 @@ function displaySales() {
   document.body.appendChild(list);
 }
 
-// call our domStuff function
 displaySales();
