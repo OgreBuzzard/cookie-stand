@@ -25,11 +25,6 @@ Store.prototype.hourlySales = function() {
   this.totalSalesDay = cookiesDay;
 };
 
-var tableHeader = document.getElementById('table_header');
-var tableBody = document.getElementById('table_content');
-var tableFooter = document.getElementById('table_footer');
-var stores = [];
-
 var firstAndPike = new Store('1st and Pike', 23, 65, 6.3);
 var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
 var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
@@ -42,62 +37,65 @@ seattleCenter.hourlySales();
 capitolHill.hourlySales();
 alki.hourlySales();
 
+var stores = [];
 stores.push(firstAndPike);
 stores.push(seaTac);
 stores.push(seattleCenter);
 stores.push(capitolHill);
 stores.push(alki);
 
-var j = 0;
-var store = stores[j];
-
 function drawTable() {
-  var tableHeaderRow = document.createElement('tr');
-  var tableHeaderData = document.createElement('td');
-  tableHeaderData.innerHTML = '';
-  tableHeaderRow.appendChild(tableHeaderData);
+  var j = 0;
+  var store = stores[j];
+  var tHeader = document.getElementById('table_header');
+  var tHeaderRow = document.createElement('tr');
+  var tHeaderData = document.createElement('td');
+  tHeaderData.innerHTML = '';
+  tHeaderRow.appendChild(tHeaderData);
   for (var i = 0; i < store.hours.length; i++) {
-    tableHeaderData = document.createElement('td');
-    tableHeaderData.innerHTML = store.hours[i];
-    tableHeaderRow.appendChild(tableHeaderData);
+    tHeaderData = document.createElement('td');
+    tHeaderData.innerHTML = store.hours[i];
+    tHeaderRow.appendChild(tHeaderData);
   }
-  tableHeaderData = document.createElement('td');
-  tableHeaderData.innerHTML = 'Daily Location Total';
-  tableHeaderRow.appendChild(tableHeaderData);
-  tableHeader.appendChild(tableHeaderRow);
-  var tableRow;
-  var tableData;
+  tHeaderData = document.createElement('td');
+  tHeaderData.innerHTML = 'Daily Location Total';
+  tHeaderRow.appendChild(tHeaderData);
+  tHeader.appendChild(tHeaderRow);
+  var tBody = document.getElementById('table_content');
+  var tRow;
+  var tData;
   for (j = 0; j < stores.length; j++) {
     store = stores[j];
-    tableRow = document.createElement('tr');
-    tableData = document.createElement('td');
-    tableData.innerHTML = store.name;
-    tableRow.appendChild(tableData);
+    tRow = document.createElement('tr');
+    tData = document.createElement('td');
+    tData.innerHTML = store.name;
+    tRow.appendChild(tData);
     for (var k = 0; k < store.hours.length; k++) {
-      tableData = document.createElement('td');
-      tableData.innerHTML = store.totalSalesByHour[k];
-      tableRow.appendChild(tableData);
+      tData = document.createElement('td');
+      tData.innerHTML = store.totalSalesByHour[k];
+      tRow.appendChild(tData);
     }
-    tableData = document.createElement('td');
-    tableData.innerHTML = store.totalSalesDay;
-    tableRow.appendChild(tableData);
-    tableBody.appendChild(tableRow);
+    tData = document.createElement('td');
+    tData.innerHTML = store.totalSalesDay;
+    tRow.appendChild(tData);
+    tBody.appendChild(tRow);
   }
   var allStoresHour = 0;
-  var tableFooterRow = document.createElement('tr');
-  var tableFooterData = document.createElement('td');
-  tableFooterData.innerHTML = 'Totals:';
-  tableFooterRow.appendChild(tableFooterData);
-  for (i = 0; i < store.hours.length; i++) {
-    tableFooterData = document.createElement('td');
-    for (j = 0; j < stores.length; j++) {
-      allStoresHour += stores[j].totalSalesByHour[i];
+  var tFooter = document.getElementById('table_footer');
+  var tFooterRow = document.createElement('tr');
+  var tFooterData = document.createElement('td');
+  tFooterData.innerHTML = 'Totals:';
+  tFooterRow.appendChild(tFooterData);
+  for (var l = 0; l < store.hours.length; l++) {
+    tFooterData = document.createElement('td');
+    for (var m = 0; m < stores.length; m++) {
+      allStoresHour += stores[m].totalSalesByHour[l];
     }
-    tableFooterData.innerHTML = allStoresHour;
+    tFooterData.innerHTML = allStoresHour;
     allStoresHour = 0;
-    tableFooterRow.appendChild(tableFooterData);
+    tFooterRow.appendChild(tFooterData);
   }
-  tableFooter.appendChild(tableFooterRow);
+  tFooter.appendChild(tFooterRow);
 }
 
 drawTable();
