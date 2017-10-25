@@ -5,20 +5,24 @@ function Store(name, minCust, maxCust, avgCookCust) {
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgCookCust = avgCookCust;
+  this.customersHour = [];
   this.totalSalesByHour = [];
   this.totalSalesDay = 0;
   this.hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 };
 
 Store.prototype.randomCookie = function() {
-  return (Math.random() * (this.maxCust - this.minCust)) + this.minCust;
+  return Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
 };
 
 Store.prototype.hourlySales = function() {
+  var custHour;
   var cookiesHour;
   var cookiesDay = 0;
   for (var i = 0; i < this.hours.length; i++) {
-    cookiesHour = Math.floor(this.randomCookie() * this.avgCookCust);
+    custHour = Math.floor(this.randomCookie());
+    this.customersHour.push(custHour);
+    cookiesHour = Math.floor(custHour * this.avgCookCust);
     this.totalSalesByHour.push(cookiesHour);
     cookiesDay += cookiesHour;
   };
@@ -117,7 +121,7 @@ function drawStaffTable() {
   var tBody = document.getElementById('table_staff_content');
   var tRow;
   var tData;
-  var staffNeeded;
+  var staffNeeded = 0;
   for (j = 0; j < stores.length; j++) {
     store = stores[j];
     tRow = document.createElement('tr');
@@ -125,7 +129,7 @@ function drawStaffTable() {
     tData.innerHTML = store.name;
     tRow.appendChild(tData);
     for (var k = 0; k < store.hours.length; k++) {
-      staffNeeded = Math.ceil(store.randomCookie() / 20);
+      staffNeeded = Math.ceil(store.customersHour[k] / 20);
       if (staffNeeded < 2) {
         staffNeeded++;
       }
