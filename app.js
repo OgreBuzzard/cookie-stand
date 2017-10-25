@@ -11,7 +11,7 @@ var firstAndPike = {
     return Math.floor(((Math.random() * (this.maxCust - this.minCust)) + this.minCust) * this.avgCookCust);
   },
   hourlySales: function() {
-    var cookiesHour = 0;
+    var cookiesHour;
     var cookiesDay = 0;
     for (var i = 0; i < firstAndPike.hours.length; i++) {
       cookiesHour = this.randomCookie();
