@@ -138,7 +138,7 @@ function drawStaffTable() {
     for (var k = 0; k < store.hours.length; k++) {
       staffNeeded = Math.ceil(store.customersHour[k] / 20);
       if (staffNeeded < 2) {
-        staffNeeded++;
+        staffNeeded = 2;
       }
       tData = document.createElement('td');
       tData.innerHTML = staffNeeded;
@@ -168,5 +168,9 @@ function formData(event) {
   document.getElementById('table_cookie_content').innerHTML = '';
   document.getElementById('table_cookie_footer').innerHTML = '';
   drawSalesTable();
+  document.getElementById('table_staff_header').innerHTML = '';
+  document.getElementById('table_staff_content').innerHTML = '';
+  document.getElementById('table_staff_footer').innerHTML = '';
+  drawStaffTable();
   form.reset();
 }

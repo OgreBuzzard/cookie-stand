@@ -4,6 +4,10 @@
   background-color: (0, 252, 255);
 }
 
+header {
+  background-color: (40, 40, 40);
+}
+
 highlight {
   font-family: Amatic SC, cursive;
   color: (255, 112, 25);
