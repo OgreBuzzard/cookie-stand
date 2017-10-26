@@ -24,7 +24,7 @@
           </tfoot>
         </table>
         <h2>Staff Needed</h2>
-        <table>
+        <table id="table_staff">
           <thead id="table_staff_header">
             <!-- table header dynamically generated in JS -->
           </thead>
@@ -44,17 +44,17 @@
 
             <fieldset>
               <label for="min_cust">Min Customers:</label>
-              <input type="number" name="minCust" placeholder="Minimum customers per hour" required>
+              <input type="number" name="min_cust" placeholder="Minimum customers per hour" required>
             </fieldset>
 
             <fieldset>
               <label for="max_cust">Max Customers:</label>
-              <input type="number" name="maxCust" placeholder="Maximum customers per hour" required>
+              <input type="number" name="max_cust" placeholder="Maximum customers per hour" required>
             </fieldset>
 
             <fieldset>
               <label for="avg_cust">Average Cookies:</label>
-              <input type="number" name="avgCookCust" placeholder="Average cookies per customer" required>
+              <input type="number" name="avg_cook_cust" placeholder="Average cookies per customer" required>
             </fieldset>
 
             <button id="submit_btn" type="submit">Add Store</button>
