@@ -56,10 +56,10 @@ function drawSalesTable() {
   var tHeader = document.getElementById('table_cookie_header');
   var tHeaderRow = document.createElement('tr');
   var tHeaderData = document.createElement('td');
-  tHeaderData.innerHTML = '';
   tHeaderRow.appendChild(tHeaderData);
   for (var i = 0; i < hours.length; i++) {
     tHeaderData = document.createElement('td');
+    // var newText = document.createTextNode(hours[i]);
     tHeaderData.innerHTML = hours[i];
     tHeaderRow.appendChild(tHeaderData);
   }
@@ -101,6 +101,8 @@ function drawSalesTable() {
     allStoresHour = 0;
     tFooterRow.appendChild(tFooterData);
   }
+  tFooterData = document.createElement('td');
+  tFooterRow.appendChild(tFooterData);
   tFooter.appendChild(tFooterRow);
 }
 
@@ -111,7 +113,6 @@ function drawStaffTable() {
   var tHeader = document.getElementById('table_staff_header');
   var tHeaderRow = document.createElement('tr');
   var tHeaderData = document.createElement('td');
-  tHeaderData.innerHTML = '';
   tHeaderRow.appendChild(tHeaderData);
   for (var i = 0; i < hours.length; i++) {
     tHeaderData = document.createElement('td');
