@@ -1,5 +1,6 @@
 'use strict';
 
+// Constructor function to create objects
 function Store(name, minCust, maxCust, avgCookCust) {
   this.name = name;
   this.minCust = minCust;
@@ -11,16 +12,18 @@ function Store(name, minCust, maxCust, avgCookCust) {
   this.hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 };
 
+// Generate a random number of customers
 Store.prototype.randomCookie = function() {
   return Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
 };
 
+// Take the random number of customers to determine number of cookies sold per hour and per day
 Store.prototype.hourlySales = function() {
   var custHour;
   var cookiesHour;
   var cookiesDay = 0;
   for (var i = 0; i < this.hours.length; i++) {
-    custHour = Math.floor(this.randomCookie());
+    custHour = this.randomCookie();
     this.customersHour.push(custHour);
     cookiesHour = Math.floor(custHour * this.avgCookCust);
     this.totalSalesByHour.push(cookiesHour);
@@ -29,18 +32,14 @@ Store.prototype.hourlySales = function() {
   this.totalSalesDay = cookiesDay;
 };
 
+// Generate variables to feed into the Constructor and make objects
 var firstAndPike = new Store('1st and Pike', 23, 65, 6.3);
 var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
 var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
 var capitolHill = new Store('Capitol Hill', 20, 38, 2.3);
 var alki = new Store('Alki', 2, 16, 4.6);
 
-firstAndPike.hourlySales();
-seaTac.hourlySales();
-seattleCenter.hourlySales();
-capitolHill.hourlySales();
-alki.hourlySales();
-
+// Push all the store objects into an array
 var stores = [];
 stores.push(firstAndPike);
 stores.push(seaTac);
@@ -48,6 +47,12 @@ stores.push(seattleCenter);
 stores.push(capitolHill);
 stores.push(alki);
 
+// Run the function for each store object
+for(var h = 0; h < stores.length; h++) {
+  stores[h].hourlySales();
+}
+
+// Fill the cookies sales table
 function drawSalesTable() {
   var j = 0;
   var store = stores[j];
@@ -102,8 +107,10 @@ function drawSalesTable() {
   tFooter.appendChild(tFooterRow);
 }
 
+// Run the cookie sales table
 drawSalesTable();
 
+// Fill the staffing table
 function drawStaffTable() {
   var j = 0;
   var store = stores[j];
@@ -141,4 +148,25 @@ function drawStaffTable() {
   }
 }
 
+// Run the staffing table
 drawStaffTable();
+
+var form = document.getElementById('store_form');
+form.addEventListener('submit', formData);
+
+function formData(event) {
+  event.preventDefault();
+  var name = event.target.name.value;
+  var minCust = event.target.minCust.value;
+  var maxCust = event.target.maxCust.value;
+  var avgCust = event.target.avgCookCust.value;
+
+  var newStore = new Store(name, minCust, maxCust, avgCust);
+  newStore.hourlySales();
+  stores.push(newStore);
+  document.getElementById('table_cookie_header').innerHTML = '';
+  document.getElementById('table_cookie_content').innerHTML = '';
+  document.getElementById('table_cookie_footer').innerHTML = '';
+  drawSalesTable();
+  form.reset();
+}

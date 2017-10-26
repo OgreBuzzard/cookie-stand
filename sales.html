@@ -12,7 +12,7 @@
     </header>
     <main>
       <h2>Cookies Sold</h2>
-      <table>
+      <table id="table_cookie">
           <thead id="table_cookie_header">
             <!-- table header dynamically generated in JS -->
           </thead>
@@ -25,16 +25,53 @@
         </table>
         <h2>Staff Needed</h2>
         <table>
-            <thead id="table_staff_header">
-              <!-- table header dynamically generated in JS -->
-            </thead>
-            <tbody id="table_staff_content">
-              <!-- table content dynamically generated in JS -->
-            </tbody>
-            <tfoot id="table_staff_footer">
-              <!-- table footer dynamically generated in JS -->
-            </tfoot>
-          </table>
+          <thead id="table_staff_header">
+            <!-- table header dynamically generated in JS -->
+          </thead>
+          <tbody id="table_staff_content">
+            <!-- table content dynamically generated in JS -->
+          </tbody>
+          <tfoot id="table_staff_footer">
+            <!-- table footer dynamically generated in JS -->
+          </tfoot>
+        </table>
+        <h2>Form</h2>
+          <form id="store_form">
+            <fieldset>
+              <label for="name">Store Name:</label>
+              <input type="text" name="name" placeholder="Name of the store" required>
+            </fieldset>
+
+            <fieldset>
+              <label for="min_cust">Min Customers:</label>
+              <input type="number" name="minCust" placeholder="Minimum customers per hour" required>
+            </fieldset>
+
+            <fieldset>
+              <label for="max_cust">Max Customers:</label>
+              <input type="number" name="maxCust" placeholder="Maximum customers per hour" required>
+            </fieldset>
+
+            <fieldset>
+              <label for="avg_cust">Average Customers:</label>
+              <input type="number" name="avgCookCust" placeholder="Average customers per hour" required>
+            </fieldset>
+
+            <button id="submit_btn" type="submit">Add Store</button>
+          </form>
+
+          <!-- <section id="students">
+            <table>
+              <thead>
+                <th>first name</th>
+                <th>last name</th>
+                <th>enrolled</th>
+                <th>interested in future classes?</th>
+              </thead>
+              <tbody id="store_table">
+              </tbody>
+            </table>
+          </section> -->
       </main>
     <script src="app.js"></script>
   </body>
