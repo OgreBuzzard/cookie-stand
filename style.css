@@ -2,15 +2,19 @@
 
 body {
   background-color: #ECECEB;
-  margin: auto;
-  width: 960px;
+  margin: 10px;
+  width: 940px;
 }
 
 header {
   background-color: #74B0AD;
-  padding: 0;
-  margin: auto;
+  margin: 10px;
   height: 200px;
+}
+
+main {
+  margin: 0px;
+  width: 940px;
 }
 
 h1 {
@@ -22,12 +26,9 @@ h1 {
 
 nav {
   background-color: #568C8A;
-  height: 50px;
-}
-
-highlight {
-  font-family: Amatic SC, cursive;
-  color: rgb(255, 112, 25);
+  height: 30px;
+  margin: 10px;
+  text-align: center;
 }
 
 h2 {
@@ -35,22 +36,69 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  font-family: Helvetica;
+  font-size: 20px;
+  display: inline;
+  color: #000;
+  font-weight: bold;
+  margin: 0 100px;
+}
+
+p {
+  font-family: Helvetica;
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: #000;
+}
+
 text {
   font-family: georgia;
   color: rgb(184, 103, 54);
 }
 
+img {
+  width: 300px;
+}
+
+.salmoncookies {
+  width: 30%;
+  margin: auto;
+  display: block;
+}
+
 table {
   background-color: #D9853C;
   font-family: georgia;
-  max-width: 600px;
+  font-size: 12px;
+  margin: 10px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+.tables {
+  width: 700px;
+  display: inline-block;
+  margin: 0;
 }
 
 /* Form style */
-.form-style{
-    float: right;
-    max-width:200px;
-    margin:50px auto;
+.formBox {
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+  margin: 10px;
+}
+.form-style {
+    /*float: right;*/
     background: #568C8A;
     border-radius:2px;
     padding:20px;
