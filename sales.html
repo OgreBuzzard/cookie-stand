@@ -37,42 +37,33 @@
           </tfoot>
         </table>
         <h2>Form</h2>
-          <form id="store_form">
-            <fieldset>
-              <label for="name">Store Name:</label>
-              <input type="text" name="name" placeholder="Name of the store" required>
-            </fieldset>
+        <form id="store_form" class="form-style">
+          <fieldset>
+            <label for="name">Store Name:</label>
+            <input type="text" name="name" maxlength="100" required>
+            <span>Name of store</span>
+          </fieldset>
 
-            <fieldset>
-              <label for="min_cust">Min Customers:</label>
-              <input type="number" name="min_cust" placeholder="Minimum customers per hour" required>
-            </fieldset>
+          <fieldset>
+            <label for="min_cust">Min Customers:</label>
+            <input type="number" name="min_cust" maxlength="100" required>
+            <span>Minimum customers per hour</span>
+          </fieldset>
 
-            <fieldset>
-              <label for="max_cust">Max Customers:</label>
-              <input type="number" name="max_cust" placeholder="Maximum customers per hour" required>
-            </fieldset>
+          <fieldset>
+            <label for="max_cust">Max Customers:</label>
+            <input type="number" name="max_cust" maxlength="100" required>
+            <span>Maximum customers per hour</span>
+          </fieldset>
 
-            <fieldset>
-              <label for="avg_cust">Average Cookies:</label>
-              <input type="number" name="avg_cook_cust" placeholder="Average cookies per customer" required>
-            </fieldset>
+          <fieldset>
+            <label for="avg_cust">Average Cookies:</label>
+            <input type="number" name="avg_cook_cust" maxlength="100" required>
+            <span>Average cookies per customer</span>
+          </fieldset>
 
-            <button id="submit_btn" type="submit">Add Store</button>
-          </form>
-
-          <!-- <section id="students">
-            <table>
-              <thead>
-                <th>first name</th>
-                <th>last name</th>
-                <th>enrolled</th>
-                <th>interested in future classes?</th>
-              </thead>
-              <tbody id="store_table">
-              </tbody>
-            </table>
-          </section> -->
+          <button id="submit_btn" type="submit">Add Store</button>
+        </form>
       </main>
     <script src="app.js"></script>
   </body>

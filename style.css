@@ -2,18 +2,19 @@
 
 body {
   background-color: #ECECEB;
-  margin: 0;
+  margin: auto;
+  width: 960px;
 }
 
 header {
   background-color: #74B0AD;
   padding: 0;
-  margin: 0;
+  margin: auto;
   height: 200px;
 }
 
 h1 {
-  font-family: Amatic SC;
+  font-family: 'Amatic SC';
   font-size: 96px;
   text-align: center;
   position: relative;
@@ -42,6 +43,97 @@ text {
 table {
   background-color: #D9853C;
   font-family: georgia;
+  max-width: 600px;
 }
 
-table.table-striped
+/* Form style */
+.form-style{
+    float: right;
+    max-width:200px;
+    margin:50px auto;
+    background: #568C8A;
+    border-radius:2px;
+    padding:20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style h1{
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0px 0px 20px 0px;
+    color: #5C5C5C;
+    font-size:x-large;
+}
+.form-style fieldset{
+    display: block;
+    padding: 9px;
+    border:1px solid #000;
+    margin-bottom: 30px;
+    border-radius: 3px;
+}
+.form-style fieldset:last-child{
+    border:none;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.form-style fieldset > label{
+    display: block;
+    float: left;
+    margin-top: -28px;
+    background: ##74B0AD;
+    height: 14px;
+    padding: 2px 5px 2px 5px;
+    color: #000;
+    font-size: 14px;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.form-style input[type="text"],
+.form-style input[type="number"],
+.form-style textarea,
+.form-style select
+{
+    background: #568C8A;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    display: block;
+    outline: none;
+    border: none;
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+    padding: 0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style input[type="text"]:focus,
+.form-style input[type="number"]:focus,
+.form-style textarea:focus,
+.form-style select:focus
+{
+}
+.form-style fieldset > span{
+    background: #74B0AD;
+    display: block;
+    padding: 3px;
+    margin: 0 -9px -9px -9px;
+    text-align: center;
+    color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+.form-style textarea{
+    resize:none;
+}
+.form-style button[type="submit"]{
+    background: #74B0AD;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 3px;
+    color: #D2E2FF;
+}
+.form-style button[type="submit"]:hover{
+    background: #A8FFFB;
+    color:#fff;
+}
